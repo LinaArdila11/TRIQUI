@@ -18,9 +18,23 @@ class Juego:
         self.miJugador.seleccionar_simbolo()
 
         if self.miJugador.miFicha.simbolo=='X':
-            self.computador.miFicha.simbolo=='O'
+            self.computador.miFicha.simbolo='O'
         else:
-            self.computador.miFicha.simbolo=='X'
+            self.computador.miFicha.simbolo='X'
+
+        jugadas=0
+
+        while Jugador<9:
+            self.miJugador.realizar_jugada(self.miTablero)
+            if self.miTablero.verificar_triqui():
+                print("GANADOR")
+                return True
+            self.computador.realizar_jugada(self.miTablero)
+            if self.miTablero.verificar_jugada():
+                print("PERDEDOR")
+                return True
+
+            jugadas=jugadas+1
 
 miJuego=Juego()
-
+miJuego.jugar_triqui()
