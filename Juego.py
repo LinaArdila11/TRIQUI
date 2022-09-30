@@ -33,6 +33,7 @@ class Juego:
             if self.miTablero.verificar_jugada():
                 print("PERDEDOR")
                 return True
+            self.miTablero.mostrar_tablero
 
             jugadas=jugadas+1
 
